@@ -1,0 +1,18 @@
+# Meeting Companion — зависимости (Windows, Python 3.10+)
+#
+# ВАЖНО про PyTorch:
+#   * По умолчанию команда ниже ставит CPU-сборку — приложение работает
+#     на любом ноутбуке без GPU (режимы «Авто»/«CPU»).
+#   * Для ускорения на GPU NVIDIA установите CUDA-сборку ПЕРЕД остальными
+#     зависимостями (см. README, раздел «GPU»):
+#       pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu126
+
+customtkinter>=5.2
+sounddevice>=0.5.0
+numpy>=1.26
+scipy>=1.11
+torch>=2.2
+torchaudio>=2.2
+
+# GigaAM — локальная ASR-модель (устанавливается с GitHub, требует git)
+gigaam[torch] @ git+https://github.com/salute-developers/GigaAM.git

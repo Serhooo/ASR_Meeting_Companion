@@ -1,0 +1,26 @@
+# === Окружение ===
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+
+# === Портативный Python и модели (гигабайты — на GitHub не поместятся) ===
+python-portable/
+models_gigaam/
+ollama/
+ollama_models/
+
+# === Бандлы установщиков (скачиваются с оф. сайтов) ===
+tools/*
+!tools/README.md
+
+# === Кэш записей, логи, готовые протоколы ===
+cache/
+exports/
+
+# === Пользовательские настройки ===
+config.json
+
+# === Служебное ===
+Thumbs.db
+.DS_Store
