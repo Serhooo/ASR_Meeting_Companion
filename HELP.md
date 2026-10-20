@@ -97,6 +97,13 @@ python-portable\python.exe main.py
 
 **Ollama недоступна** — в настройках нажмите «Запустить» в секции «Портативная Ollama». Если модель не скачана — «Скачать модель». Лог сервера: `cache/ollama_serve.log`.
 
+**WinError 1114 «сбой инициализации DLL» (c10.dll / torch)** — на чистом
+Windows нет библиотек MSVC (MSVCP140 и т.п.), нужных PyTorch. Запустите
+приложение через **`run.bat`** — он сам скопирует их из `tools\vc-runtime\`
+в портативный Python. Если запускали вручную — выполните один раз:
+`copy tools\vc-runtime\*.dll python-portable\` и
+`copy tools\vc-runtime\*.dll python-portable\Lib\site-packages\torch\lib\`.
+
 **Ошибка CUDA / GPU не найден** — переключите «Устройство ASR» на «Авто» или «CPU». Для работы CUDA нужен NVIDIA драйвер + CUDA-сборка torch (см. README).
 
 **Медленное распознавание на CPU** — часовая встреча обрабатывается ~15–40 минут на ноутбучном CPU. Прогресс виден. Для ускорения — GPU NVIDIA или более короткие встречи.

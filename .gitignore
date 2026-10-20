@@ -13,6 +13,8 @@ ollama_models/
 # === Бандлы установщиков (скачиваются с оф. сайтов) ===
 tools/*
 !tools/README.md
+!tools/vc-runtime/
+!tools/vc-runtime/*.dll
 
 # === Кэш записей, логи, готовые протоколы ===
 cache/

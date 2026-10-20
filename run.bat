@@ -11,6 +11,16 @@ echo.
 set "PORTABLE_PY=%~dp0python-portable\python.exe"
 set "INSTALLER=%~dp0tools\python-3.13.15-amd64.exe"
 
+rem -- MSVC-рантаймы: на чистом Windows нет MSVCP140/VCRUNTIME140_THREADS,
+rem    из-за чего torch падает с WinError 1114. Копируем их в портативный
+rem    Python и в torch\lib (идемпотентно, только при наличии файлов).
+if exist "%~dp0tools\vc-runtime\" (
+    if exist "%PORTABLE_PY%" (
+        copy /y "%~dp0tools\vc-runtime\*.dll" "%~dp0python-portable\" >nul 2>&1
+        copy /y "%~dp0tools\vc-runtime\*.dll" "%~dp0python-portable\Lib\site-packages\torch\lib\" >nul 2>&1
+    )
+)
+
 rem -- Способ 1: портативный Python внутри проекта (не требует установки) ----
 if exist "%PORTABLE_PY%" (
     echo   Python: портативный (python-portable\)
