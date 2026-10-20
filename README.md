@@ -1,4 +1,5 @@
 # 🎙 Meeting Companion — локальный ИИ-секретарь встреч (Windows)
+<img width="1018" height="634" alt="image" src="https://github.com/user-attachments/assets/575eae2f-dfd2-4508-99b2-1abcb125a4c0" />
 
 Записывает встречу (микрофон + системный звук), распознаёт речь локально
 (GigaAM, русский) и строит протокол: **Решения · Договорённости · Следующие шаги**
